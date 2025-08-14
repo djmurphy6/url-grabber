@@ -17,12 +17,24 @@ A Chrome extension that automatically captures and sends the current tab's URL t
 npm install express
 ```
 
-### 2. Load Extension in Chrome
+### 2. Install Extension
 
-1. Open Chrome and go to `chrome://extensions/`
-2. Enable **Developer mode** (top right)
-3. Click **Load unpacked**
-4. Select the project folder (`url-grabber`)
+**Option A: Download ZIP (Recommended)**
+
+1. Download `url-grabber-extension.zip` from this repository
+2. Extract the ZIP file to a folder
+3. Open Chrome and go to `chrome://extensions/`
+4. Enable **Developer mode** (top right)
+5. Click **Load unpacked**
+6. Select the extracted folder
+
+**Option B: Clone Repository**
+
+1. Clone this repository
+2. Open Chrome and go to `chrome://extensions/`
+3. Enable **Developer mode** (top right)
+4. Click **Load unpacked**
+5. Select the project folder (`url-grabber`)
 
 ### 3. Start Local Server
 
@@ -31,6 +43,22 @@ node server.js
 ```
 
 The server will run on `http://localhost:6767`
+
+## Distribution
+
+### For Team/Internal Use
+
+- Download `url-grabber-extension.zip` from the repository
+- Extract and install via "Load unpacked" in Chrome
+- Extension will auto-update when new versions are pushed to GitHub
+
+### Creating Distribution Package
+
+```bash
+./create-zip.sh
+```
+
+This creates `url-grabber-extension.zip` for easy distribution.
 
 ## Usage
 
