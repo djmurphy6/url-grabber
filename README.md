@@ -7,7 +7,6 @@ A Chrome extension that automatically captures and sends the current tab's URL t
 - **Toggle Switch**: Simple on/off switch in the extension popup
 - **Live URL Capture**: Automatically sends URLs when switching tabs or refreshing pages
 - **Local Server**: Receives and logs URLs from your browsing session
-- **Modern UI**: Clean toggle switch interface with rounded corners
 
 ## Setup
 
@@ -64,7 +63,7 @@ This creates `url-grabber-extension.zip` for easy distribution.
 
 1. **Start the server**: Run `node server.js` in your terminal
 2. **Open the extension**: Click the extension icon in Chrome's toolbar
-3. **Turn ON live sending**: Toggle the switch to enable URL capture
+3. **Turn live sending on**: Toggle the switch to enable URL capture
 4. **Browse the web**: URLs will automatically be sent to your server as you navigate
 5. **View captured URLs**: Check your terminal for logged URLs
 
@@ -84,4 +83,4 @@ When the toggle is ON, the background script listens for:
 - Tab activation changes (`chrome.tabs.onActivated`)
 - Page load completion (`chrome.tabs.onUpdated`)
 
-URLs are sent via POST request to `http://localhost:3246/receive-url` and logged in the server terminal.
+URLs are sent via POST request to `http://localhost:6767/receive-url` and logged in the server terminal.
