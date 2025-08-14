@@ -12,5 +12,6 @@
   },
   "icons": {
     "32": "link-icon.png"
-  }
+  },
+  "update_url": "https://your-domain.com/updates.xml"
 }
