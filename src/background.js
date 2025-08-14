@@ -3,7 +3,6 @@ chrome.tabs.onActivated.addListener(() => {
     if (result.liveSending) {
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const url = tabs[0].url;
-        console.log('Live sending is:', result.liveSending);
         console.log('Sending URL:', url);
         sendUrlToServer(url); // Call the function to send URL to server
       });
@@ -17,14 +16,13 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       if (result.liveSending && tab.active) {
         console.log('Sending URL:', tab.url);
         sendUrlToServer(tab.url); // Call the function to send URL to server
-
       }
     });
   }
 });
 
 function sendUrlToServer(url) {
-  fetch('http://localhost:5000/receive-url', {
+  fetch('http://localhost:6767/receive-url', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ url })

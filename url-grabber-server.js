@@ -1,20 +1,22 @@
 const express = require('express');
 const app = express();
-const PORT = 5000;
+const PORT = 6767;
 
-app.use(express.json());
-
-// CORS middleware for all requests
+// CORS middleware MUST come before express.json()
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Or use your extension's origin for more security
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  
+  // Handle preflight requests
   if (req.method === 'OPTIONS') {
     res.sendStatus(200);
-  } else {
-    next();
+    return;
   }
+  next();
 });
+
+app.use(express.json());
 
 app.post('/receive-url', (req, res) => {
   console.log('Received URL:', req.body.url);
