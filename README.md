@@ -12,21 +12,25 @@ A Chrome extension that automatically captures and sends the current tab's URL t
 ## Setup
 
 ### 1. Install Dependencies
+
 ```bash
 npm install express
 ```
 
 ### 2. Load Extension in Chrome
+
 1. Open Chrome and go to `chrome://extensions/`
 2. Enable **Developer mode** (top right)
 3. Click **Load unpacked**
 4. Select the project folder (`url-grabber`)
 
 ### 3. Start Local Server
+
 ```bash
 node server.js
 ```
-The server will run on `http://localhost:3246`
+
+The server will run on `http://localhost:6767`
 
 ## Usage
 
@@ -48,6 +52,7 @@ The server will run on `http://localhost:3246`
 ## How It Works
 
 When the toggle is ON, the background script listens for:
+
 - Tab activation changes (`chrome.tabs.onActivated`)
 - Page load completion (`chrome.tabs.onUpdated`)
 
